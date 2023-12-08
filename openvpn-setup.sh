@@ -94,18 +94,6 @@ CLIENT_KEY="/etc/openvpn/easy-rsa/pki/private/client1.key"
 DECRIPT_KEY="/etc/openvpn/easy-rsa/pki/private/decryptedkey.key"
 TA_KEY="/etc/openvpn/ta.key"
 
-#openssl rsa -in "$CLIENT_KEY" -out "$DECRIPT_KEY"
-
-if [ -z "$public_ip" ]; then
-    echo "Failed to retrieve public IP address."
-    exit 1
-fi
-
-# Check if the certificate files exist
-if [[ ! -f "$CA_CRT" || ! -f "$CLIENT_CRT" || ! -f "$CLIENT_KEY" ]]; then
-    echo "Certificate files not found. Please check the paths."
-    exit 1
-fi
 
 # Output the OpenVPN configuration
 echo "client
