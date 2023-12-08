@@ -11,7 +11,7 @@ chmod +x openvpn-setup.sh
 ./openvpn-setup.sh
 
 # Install OpenVPN and Easy-RSA for certificate management
-apt-get update && apt-get install -y openvpn easy-rsa iptables traceroute
+cpt-get update && apt-get install -y openvpn easy-rsa iptables traceroute
 echo iptables-persistent iptables-persistent/autosave_v4 boolean true | sudo debconf-set-selections
 echo iptables-persistent iptables-persistent/autosave_v6 boolean true | sudo debconf-set-selections
 apt-get -y install iptables-persistent
