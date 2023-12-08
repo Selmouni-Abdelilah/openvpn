@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Ensure the script is run with root privileges
-if [[ $EUID -ne 0 ]]; then
-   sudo -i
-fi
-
 # Install OpenVPN and Easy-RSA for certificate management
 apt-get update && apt-get install -y openvpn easy-rsa iptables traceroute
 echo iptables-persistent iptables-persistent/autosave_v4 boolean true | sudo debconf-set-selections
