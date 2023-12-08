@@ -4,14 +4,9 @@
 if [[ $EUID -ne 0 ]]; then
    sudo -i
 fi
-# Make the script executable
-chmod +x openvpn-setup.sh
-
-# Execute the script
-./openvpn-setup.sh
 
 # Install OpenVPN and Easy-RSA for certificate management
-cpt-get update && apt-get install -y openvpn easy-rsa iptables traceroute
+apt-get update && apt-get install -y openvpn easy-rsa iptables traceroute
 echo iptables-persistent iptables-persistent/autosave_v4 boolean true | sudo debconf-set-selections
 echo iptables-persistent iptables-persistent/autosave_v6 boolean true | sudo debconf-set-selections
 apt-get -y install iptables-persistent
