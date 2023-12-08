@@ -4,6 +4,11 @@
 if [[ $EUID -ne 0 ]]; then
    sudo -i
 fi
+# Make the script executable
+chmod +x openvpn-setup.sh
+
+# Execute the script
+./openvpn-setup.sh
 
 # Install OpenVPN and Easy-RSA for certificate management
 apt-get update && apt-get install -y openvpn easy-rsa iptables traceroute
